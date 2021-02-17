@@ -28,6 +28,11 @@ def translate_sequence(rna_sequence, genetic_code):
     str
         A string of the translated amino acids.
     """
+    #pseudocode
+    # IF rna_sequence is a string, and  >= 3bp, and != UAG or UAA or UGA -> do the thing
+    # ELSE: return blank string
+    #
+
     pass
 
 def get_all_translations(rna_sequence, genetic_code):
@@ -75,7 +80,10 @@ def get_reverse(sequence):
     >>> get_reverse('AUGC')
     'CGUA'
     """
-    pass
+    reverse_seq = sequence[::-1]
+    print (reverse_seq)
+    return reverse_seq
+    
 
 def get_complement(sequence):
     """Get the complement of a `sequence` of nucleotides.
