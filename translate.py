@@ -80,9 +80,13 @@ def get_reverse(sequence):
     >>> get_reverse('AUGC')
     'CGUA'
     """
-    reverse_seq = sequence[::-1]
-    print (reverse_seq)
-    return reverse_seq
+    sequence = sequence.upper()
+    if len(sequence) > 0:
+         reverse_seq = sequence[::-1] #this syntax slices the string and puts it in reverse order
+         print ("\n \n"+ reverse_seq)
+         return(reverse_seq)
+    else:
+        return("")
     
 
 def get_complement(sequence):
@@ -97,7 +101,24 @@ def get_complement(sequence):
     >>> get_complement('AUGC')
     'UACG'
     """
-    pass
+    assert sequence != ' '
+    #if len(sequence) > 0:
+       for base in sequence:
+           if base == "A":
+                complement += "U"
+           elif base == "U":
+                 complement += "A"
+           elif base == "C":
+                 complement += "G"
+           elif base == "G":
+                 complement += "C"
+           else:
+                 complement = "bad input"
+
+
+   # else:
+       # complement = " "
+        #return(complement)
 
 def reverse_and_complement(sequence):
     """Get the reversed and complemented form of a `sequence` of nucleotides.
